@@ -265,7 +265,7 @@ main {
 @media screen and (max-width: 992px) {
 
   :root {
-    font-size: 40px;
+    font-size: 14px;
   }
   .cv-container {
     flex-direction: column-reverse;
