@@ -292,19 +292,9 @@ main {
 
       .skills {
         font-size: 0.7rem;
+        padding: 8px;
       }
-    }
-  }
-}
 
-
-@media screen and (max-width: 1200px) {
-  .cv-container {
-    margin: 0 auto;
-  }
-
-  main {
-    section {
       article {
         padding: 4px;
         flex-direction: column;
@@ -323,6 +313,19 @@ main {
 
         }
 
+
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1200px) {
+    .cv-container {
+      margin: 0 auto;
+    }
+
+    main {
+      section {
         .main {
           margin-left: 4px;
         }
