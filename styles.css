@@ -272,14 +272,16 @@ main {
   }
   main {
     section {
+      margin: 4px;
+      padding: 4px;
       .top1 {
         font-size: 2.5rem;
       }
       .top2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       .skills {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
       }
     }
   }
@@ -294,11 +296,19 @@ main {
     section {
       article {
         flex-direction: column;
-        .aside .subtitle {
+        .aside {
+          min-width: auto;
           width: 100%;
+          h1 {
+            font-size: 0.9rem;
+          }
+          .subtitle {
+            width: 100%;
+          }
+
         }
         .main {
-          margin-left: 16px;
+          margin-left: 4px;
         }
       }
     }
