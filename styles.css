@@ -7,6 +7,7 @@
 :root {
   --primary-color: rgb(245, 244, 239);
   --secondary-color: rgb(1, 155, 215);
+  --bar-color: rgb(171, 197, 207);
   --background: rgb(40, 42, 54);
   --background-box: rgb(68, 71, 90);
   font-size: 16px;
@@ -43,31 +44,41 @@ aside {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    line-height: 1.7rem;
+    line-height: 1.5rem;
 
     .info {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      transition: all 0.2s ease-out;
+      cursor: pointer;
+
       i {
         font-size: 0.8rem;
-        cursor: pointer;
-        &:hover {
-          color: var(--secondary-color)
-        }
-        a:hover {
-          color: var(--secondary-color)
+      }
+
+      &:hover {
+        color: var(--secondary-color);
+        margin-left: 4px;
+      }
+
+      &:hover+.bar {
+        border: 1px solid var(--secondary-color);
+
+        .progress {
+          background-color: var(--secondary-color);
         }
       }
     }
 
     .bar {
-      margin-bottom: 4px;
+      margin-bottom: 8px;
       width: 100%;
       height: 2px;
-      border: 1px solid var(--secondary-color);
+      border: 1px solid var(--bar-color);
+
       .progress {
-        background-color: var(--secondary-color);
+        background-color: var(--bar-color);
         height: 100%;
         width: var(--progress);
       }
@@ -112,6 +123,7 @@ aside {
           background-color: var(--background-box);
           border-radius: 4px;
           text-align: center;
+
           .icon {
             width: 24px;
             height: 24px;
@@ -159,6 +171,7 @@ section {
 main {
 
   h1 {
+    font-size: 1.5rem;
     text-align: center;
     padding-top: 20px;
   }
@@ -180,7 +193,7 @@ main {
     border-radius: 16px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     margin: 16px;
-    padding: 16px;
+    padding: 24px;
     background-color: var(--primary-color);
 
     .top1 {
@@ -227,13 +240,14 @@ main {
     article {
       display: flex;
       flex-direction: row;
-      border-bottom: 1px solid var(--primary-color);
-      padding: 8px;
+      border-bottom: 1px solid var(--bar-color);
+      padding: 16px 0;
+      margin: 16px 0;
 
       .aside {
         min-width: 350px;
         text-align: left;
-        padding: 8px;
+        padding-right: 8px;
         font-size: 0.9rem;
 
         i {
@@ -242,21 +256,23 @@ main {
         }
 
         h1 {
-          font-size: 1.2rem;
+          font-size: 1rem;
           text-align: left;
           font-weight: 700;
           display: inline;
-          margin-left: 4px;
           color: var(--background-box);
         }
 
         .subtitle {
-          width: 340px;
+          width: 100%;
+          margin-bottom: 8px;
           display: flex;
           justify-content: space-between;
 
-          em {
-            font-weight: 700;
+          .owner {
+            padding-left: 28px;
+            font-weight: 300;
+            color: var(--background-box);
           }
 
           span {
@@ -269,12 +285,13 @@ main {
       }
 
       .main {
-        padding: 8px 16px;
+        padding-left: 16px;
         border-left: 1px solid var(--background-box);
 
         p {
           text-align: justify;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
+          margin-bottom: 8px;
         }
       }
 
@@ -291,7 +308,7 @@ main {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
 
   :root {
     font-size: 14px;
@@ -308,7 +325,7 @@ main {
 
     section {
       margin: 4px;
-      padding: 16px;
+      padding: 8px;
       border-radius: 4px;
 
       .top1 {
@@ -326,40 +343,40 @@ main {
 
       article {
         padding: 4px;
-        flex-direction: column;
 
         .aside {
           min-width: auto;
-          width: 90%;
-
-          h1 {
-            font-size: 1rem;
-          }
+          width: 100%;
 
           .subtitle {
-            width: 90%;
+            width: 100%;
           }
-
         }
-
-
       }
     }
   }
+}
 
+@media screen and (max-width: 1200px) {
 
-  @media screen and (max-width: 1200px) {
-    .cv-container {
-      margin: 0 auto;
-    }
+  .cv-container {
+    margin: 0 auto;
+  }
 
-    main {
-      section {
+  aside {
+    flex: 0 0 200px;
+  }
+
+  main {
+
+    section {
+      article {
+        flex-direction: column;
+
         .main {
           margin-left: 4px;
         }
       }
     }
   }
-
 }
